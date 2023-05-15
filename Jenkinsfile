@@ -14,12 +14,12 @@ pipeline{
             
             steps {
                     ansiColor('xterm') {
-                    withCredentials([azureServicePrincipal(
+                    withCredentials(azureServicePrincipal)
                     credentialsId: 'Jenkins',
-                    subscriptionIdVariable: 'ARM_SUBSCRIPTION_ID',
+                    subscriptionIdVariable: '97c87a23-e782-41f3-aaba-66112df4974a',
                     clientIdVariable: 'ARM_CLIENT_ID',
                     clientSecretVariable: 'ARM_CLIENT_SECRET',
-                    tenantIdVariable: 'ARM_TENANT_ID'
+                    tenantIdVariable: 'e547a37a-b2ab-424d-b29c-f517b5fd3ecb'
                 ), string(credentialsId: 'access_key', variable: 'ARM_ACCESS_KEY')]) {
                         
                         sh """
